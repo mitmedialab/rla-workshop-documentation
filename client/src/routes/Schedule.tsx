@@ -40,7 +40,7 @@ class Schedule extends React.Component<any, any> {
       ],
     };
     return (
-      <div className="uk-padding-large uk-section uk-section-muted">
+      <div className="uk-padding uk-section uk-section-muted">
         <ul uk-accordion="true">
           {days.map((day) => {
             return (
