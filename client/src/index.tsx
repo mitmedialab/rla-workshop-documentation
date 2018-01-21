@@ -16,7 +16,6 @@ class App extends React.Component<any, any> {
             <a className="uk-navbar-item uk-logo" href="">RLA Workshop</a>
             <ul className="uk-subnav uk-subnav-pill" uk-switcher="connect: .switcher-container">
               <li><a href="#">Team Folders</a></li>
-              <li><a href="#">Documents</a></li>
               <li><a href="#">Schedule</a></li>
               <li><a href="#">Office Hours</a></li>
             </ul>
@@ -24,7 +23,6 @@ class App extends React.Component<any, any> {
         </nav>
         <ul className="uk-switcher switcher-container page-content-wrapper">
           <li className="page-content-wrapper"><TeamFolders /></li>
-          <li className="page-content-wrapper"><Documents /></li>
           <li className="page-content-wrapper"><Schedule /></li>
           <li className="page-content-wrapper"><OfficeHours /></li>
         </ul>
