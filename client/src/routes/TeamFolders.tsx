@@ -34,13 +34,6 @@ class TeamFolders extends React.Component<any, any> {
   render() {
     return (
       <div className="uk-padding uk-section uk-section-secondary page-content">        
-        <h3 className="uk-heading-divider">New Folder</h3>
-        <div>Create a new folder if your team doesn't have a folder yet:</div>
-        <div className="small-spacer"></div>
-        <div>
-          <input className="uk-input uk-form-width-large" type="text" placeholder="Enter team name..." onChange={this.handleChange.bind(this)} value={this.state.folderName}/> <button className="uk-button uk-button-primary" onClick={this.handleClick.bind(this)}>Create Team Folder</button>
-        </div>
-        
         <h3 className="uk-heading-divider">Team Folders</h3>
         <div>
           <div className="folder-button-container">
@@ -50,6 +43,13 @@ class TeamFolders extends React.Component<any, any> {
               );
             })}
           </div>
+        </div>
+        
+        <h3 className="uk-heading-divider">New Folder</h3>
+        <div>Create a new folder if your team doesn't have a folder yet:</div>
+        <div className="small-spacer"></div>
+        <div>
+          <input className="uk-input uk-form-width-large" type="text" placeholder="Enter team name..." onChange={this.handleChange.bind(this)} value={this.state.folderName}/> <button className="uk-button uk-button-primary" onClick={this.handleClick.bind(this)}>Create Team Folder</button>
         </div>
       </div>
     );
