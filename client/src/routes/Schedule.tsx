@@ -5,7 +5,7 @@ import ScheduleTable from '../components/ScheduleTable';
 class Schedule extends React.Component<any, any> {
   render() {
     // Today changed at the start of each day
-    var today = 'Sunday';
+    var today = 'Monday';
     var days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     // Events to be filled with latest
     var events = {
@@ -14,15 +14,15 @@ class Schedule extends React.Component<any, any> {
         ['6:00pm', '', 'Working dinner with NGOs', '	Tannoureen Restaurant'],
       ],
       'Sunday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
-        ['9:00am', '10:00am', 'Group time', 'Brasserie @ Crowne Plaza Hotel'], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
+        ['9:00am', '10:00am', 'Group time', 'Brasserie @ Crowne Plaza Hotel'],
         ['10:00am', '4:00pm', 'Field visits', 'Molham, Jesuit Refugee Services, Ruwaad, Happiness Again, UNICEF'],
         ['6:00 pm', '', 'Debrief', 'Brasserie @ Crowne Plaza Hotel'],
         ['7:00 pm', '', 'Dinner', 'Brasserie @ Crowne Plaza Hotel']
       ],
       'Monday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
-        ['9:00am', '', 'Buses leave hotel', ''], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
+        ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:30pm', '"Speed dating" with NGOs', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
         ['1:15pm', '2:45pm', 'Synthesis and prototyping', 'VBC'],
@@ -32,7 +32,7 @@ class Schedule extends React.Component<any, any> {
         ['', '', 'Buses back to hotel', '']
       ],
       'Tuesday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
         ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:00pm', '1:00pm', 'Lunch', 'VBC'],
@@ -41,7 +41,7 @@ class Schedule extends React.Component<any, any> {
         ['', '', 'Buses back to hotel', '']
       ],
       'Wednesday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
         ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
@@ -51,7 +51,7 @@ class Schedule extends React.Component<any, any> {
         ['', '', 'Buses back to hotel', '']
       ],
       'Thursday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
         ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
@@ -61,7 +61,7 @@ class Schedule extends React.Component<any, any> {
         ['', '', 'Buses back to hotel', '']
       ],
       'Friday': [
-        ['', '', 'Breakfast', 'Crown Plaza hotel'], 
+        ['', '', 'Breakfast', 'Crown Plaza hotel'],
         ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:30pm', 'Lunch', 'VBC'],
