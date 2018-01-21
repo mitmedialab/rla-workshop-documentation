@@ -15,6 +15,17 @@ app.use(express.static("client/public"));
 app.engine('html', function (path, options, callback) {
   fs.readFile(path, 'utf-8', callback);
 });
+app.get("/teamfolders", (req, res) => {
+  res.send([
+    ['name 1', 'link 1'],
+    ['name 2', 'link 2'],
+    ['name 3', 'link 3']
+  ])
+});
+app.post("/teamfolder", (req, res) => {
+  console.log(req.body.name);
+  res.send(true);
+});
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/public/index.html'));
 });
