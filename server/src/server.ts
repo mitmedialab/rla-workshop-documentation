@@ -7,21 +7,26 @@ import * as logger from "morgan";
 import * as express from "express";
 
 var PREMADE_FOLDERS = [
-  "https://drive.google.com/drive/u/0/folders/1H6OLX2n3pvuBk5cRWIxS5h4BkRC8alLq", 
-  "https://drive.google.com/drive/u/0/folders/16VOjlUJ9Bf2QtvISgI_VZKLin9-io2nU", 
-  "https://drive.google.com/drive/u/0/folders/1ktI7bbpNhLg9XODfkvIAwOgw3LhVLKka", 
-  "https://drive.google.com/drive/u/0/folders/1jQFU0e4Uw9VCR-MihNK4rJqoO8gVIEp8", 
-  "https://drive.google.com/drive/u/0/folders/1hi8mJlgzeWttjn_4Y-2oA77MXzr1S5Wf", 
-  "https://drive.google.com/drive/u/0/folders/15U-ruAhvudJidOKLjZu3p7c37M9qXsxb", 
-  "https://drive.google.com/drive/u/0/folders/1IhZfrxPZ8QaDWw5CKqG-q2KmrpMFiVgJ", 
-  "https://drive.google.com/drive/u/0/folders/1u1spUHvnJPXLPeMpN9tokWq8l6Ngqt81", 
-  "https://drive.google.com/drive/u/0/folders/1-YcoUgcgDvHAyFLM6__hoH0PqsdNUT-C", 
-  "https://drive.google.com/drive/u/0/folders/13K3EBkRBIGtdQW7jj_K9tXqaHddBl5bn", 
-  "https://drive.google.com/drive/u/0/folders/1pA_k2BIqqPlL66E4c-SBG1w2TW9B6pwy", 
-  "https://drive.google.com/drive/u/0/folders/15hbZ7lr5ra5Reue3TUbQN355AvjS90pt", 
-  "https://drive.google.com/drive/u/0/folders/1WL7yAndqXJx7TCxwRrFvn9AOepMGevaU", 
-  "https://drive.google.com/drive/u/0/folders/17u9VZFb2tmGuFHeOQC1M7zfb4JOoVt5l", 
-  "https://drive.google.com/drive/u/0/folders/1YaLXHMZWADKgrURnTeY4HrOF3NDFSs-9"
+  "https://drive.google.com/drive/u/0/folders/1H6OLX2n3pvuBk5cRWIxS5h4BkRC8alLq",
+  "https://drive.google.com/drive/u/0/folders/16VOjlUJ9Bf2QtvISgI_VZKLin9-io2nU",
+  "https://drive.google.com/drive/u/0/folders/1ktI7bbpNhLg9XODfkvIAwOgw3LhVLKka",
+  "https://drive.google.com/drive/u/0/folders/1jQFU0e4Uw9VCR-MihNK4rJqoO8gVIEp8",
+  "https://drive.google.com/drive/u/0/folders/1hi8mJlgzeWttjn_4Y-2oA77MXzr1S5Wf",
+  "https://drive.google.com/drive/u/0/folders/15U-ruAhvudJidOKLjZu3p7c37M9qXsxb",
+  "https://drive.google.com/drive/u/0/folders/1IhZfrxPZ8QaDWw5CKqG-q2KmrpMFiVgJ",
+  "https://drive.google.com/drive/u/0/folders/1u1spUHvnJPXLPeMpN9tokWq8l6Ngqt81",
+  "https://drive.google.com/drive/u/0/folders/1-YcoUgcgDvHAyFLM6__hoH0PqsdNUT-C",
+  "https://drive.google.com/drive/u/0/folders/13K3EBkRBIGtdQW7jj_K9tXqaHddBl5bn",
+  "https://drive.google.com/drive/u/0/folders/1pA_k2BIqqPlL66E4c-SBG1w2TW9B6pwy",
+  "https://drive.google.com/drive/u/0/folders/15hbZ7lr5ra5Reue3TUbQN355AvjS90pt",
+  "https://drive.google.com/drive/u/0/folders/1WL7yAndqXJx7TCxwRrFvn9AOepMGevaU",
+  "https://drive.google.com/drive/u/0/folders/17u9VZFb2tmGuFHeOQC1M7zfb4JOoVt5l",
+  "https://drive.google.com/drive/u/0/folders/1YaLXHMZWADKgrURnTeY4HrOF3NDFSs-9",
+  "https://drive.google.com/drive/u/0/folders/1u54k-QpRHERff54eEIsONvR-8eNohAQs",
+  "https://drive.google.com/drive/u/0/folders/17V2Pd2NcqxYeBFubjJJLXUDhiqcdVDr5",
+  "https://drive.google.com/drive/u/0/folders/1GlEAXUBaxlW3dd52VV8EHt65g2B0IsYr",
+  "https://drive.google.com/drive/u/0/folders/1q9D9LOxEjSd0MOKBtNvgFuY7PTs_izN4",
+  "https://drive.google.com/drive/u/0/folders/17z8B7XHrXQgX4u59OrTVbbABg-2JMmp3"
 ]
 
 // Configure app
@@ -39,7 +44,7 @@ app.get("/teamfolders", (req, res) => {
 });
 app.post("/teamfolder", (req, res) => {
   var jsonFile = JSON.parse(fs.readFileSync(path.join(__dirname, 'folders.json'), 'utf8'));
-  var newFolder = [req.body.name, PREMADE_FOLDERS[jsonFile['folders'].length]]; 
+  var newFolder = [req.body.name, PREMADE_FOLDERS[jsonFile['folders'].length]];
   jsonFile['folders'].push(newFolder);
   fs.writeFileSync(path.join(__dirname, 'folders.json'), JSON.stringify(jsonFile));
   res.send(true);
