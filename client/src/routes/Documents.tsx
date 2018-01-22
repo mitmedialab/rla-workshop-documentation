@@ -18,6 +18,10 @@ class Documents extends React.Component<any, any> {
               <td className="limit-width"><a className="uk-button uk-button-primary" href="https://drive.google.com/drive/folders/1bMuOHSuXzpQQ0ZqPuP07GCTaGuRlmMSq?usp=sharing">Interview Notes</a></td>
               <td>Learnings from interviews in the field</td>
             </tr>
+            <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Slides</a></td>
+              <td>Slide decks from presentations throughout the week</td>
+            </tr>
           </tbody>
         </table>
       </div>
