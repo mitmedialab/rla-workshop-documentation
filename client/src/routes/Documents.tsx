@@ -11,7 +11,7 @@ class Documents extends React.Component<any, any> {
         <table className="uk-table uk-table-small uk-table-middle">
           <tbody>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Teams</a></td>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://docs.google.com/document/d/1fpsN_GjN3AvPcR5qCf06SAV7nBPgri8ivdW7WiVSiaQ/edit?usp=sharing">Teams</a></td>
               <td>Names, members, and descriptions of all workshop teams</td>
             </tr>
             <tr>
