@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import TeamFolders from './routes/TeamFolders';
-import Documents from './routes/Documents';
 import Schedule from './routes/Schedule';
 import OfficeHours from './routes/OfficeHours';
 
