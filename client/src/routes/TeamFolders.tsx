@@ -34,6 +34,24 @@ class TeamFolders extends React.Component<any, any> {
   render() {
     return (
       <div className="uk-padding uk-section uk-section-secondary page-content">        
+        <h3 className="uk-heading-divider">General Documents</h3>
+        <table className="uk-table uk-table-small uk-table-middle">
+          <tbody>
+            <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://docs.google.com/document/d/1fpsN_GjN3AvPcR5qCf06SAV7nBPgri8ivdW7WiVSiaQ/edit?usp=sharing">Teams</a></td>
+              <td>Names, members, and descriptions of all workshop teams</td>
+            </tr>
+            <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
+              <td>Slide decks and worksheets from throughout the week</td>
+            </tr>
+            <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1bMuOHSuXzpQQ0ZqPuP07GCTaGuRlmMSq?usp=sharing">NGO Field Visits</a></td>
+              <td>Notes from from field interviews and NGO discussions</td>
+            </tr>
+          </tbody>
+        </table>
+      
         <h3 className="uk-heading-divider">Team Folders</h3>
         <div>
           <div className="folder-button-container">

@@ -15,10 +15,9 @@ class App extends React.Component<any, any> {
           <div className="uk-navbar-left">
             <a className="uk-navbar-item uk-logo" href="">RLA Workshop</a>
             <ul className="uk-subnav uk-subnav-pill" uk-switcher="connect: .switcher-container">
-              <li><a href="#">Team Folders</a></li>
+              <li><a href="#">Documentation</a></li>
               <li><a href="#">Schedule</a></li>
               <li><a href="#">Office Hours</a></li>
-              <li><a href="#">Documents</a></li>
             </ul>
           </div>
         </nav>
@@ -26,7 +25,6 @@ class App extends React.Component<any, any> {
           <li className="page-content-wrapper"><TeamFolders /></li>
           <li className="page-content-wrapper"><Schedule /></li>
           <li className="page-content-wrapper"><OfficeHours /></li>
-          <li className="page-content-wrapper"><Documents /></li>
         </ul>
       </div>
     );
