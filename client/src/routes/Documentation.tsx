@@ -42,10 +42,6 @@ class Documentation extends React.Component<any, any> {
               <td>Names, members, and descriptions of all workshop teams</td>
             </tr>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://photos.app.goo.gl/2g2icneiD2ZRBMmD2">Photos</a></td>
-              <td>Add your photos from throughout the week!</td>
-            </tr>
-            <tr>
               <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
               <td>Slide decks and worksheets from throughout the week</td>
             </tr>
@@ -55,6 +51,13 @@ class Documentation extends React.Component<any, any> {
             </tr>
           </tbody>
         </table>
+        
+        <h3 className="uk-heading-divider">Photos</h3>
+        <div>
+          <div>Add your photos from throughout the week! Use your preferred method, we'll merge later.</div>
+          <div className="small-spacer"></div>
+          <a className="uk-button uk-button-primary photos-button" href="https://photos.app.goo.gl/2g2icneiD2ZRBMmD2">Google Photos</a> <a className="uk-button uk-button-primary photos-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdYlIOzqfRZ-w5_i0P7V6CCv-D6GCsmIDhTLIIMMQW2Kou3BA/viewform">iCloud Photos</a> <a className="uk-button uk-button-primary photos-button" href="https://drive.google.com/drive/folders/1xUVIgWBOdj5GUI9s0gb9a7GFR0yiZ91N?usp=sharing">Google Drive</a>
+        </div>
       
         <h3 className="uk-heading-divider">Team Folders</h3>
         <div>
