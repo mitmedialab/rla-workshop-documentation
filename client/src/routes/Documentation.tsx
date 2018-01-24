@@ -26,8 +26,8 @@ class Documentation extends React.Component<any, any> {
   handleClick() {
     $.post('/teamfolder', {'name': this.state.folderName}).then((response) => {
       setTimeout(() => {
-        location.reload();        
-      }, 1000);
+        this.componentWillMount();
+      }, 500);
     });
   }
   
