@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import TeamFolders from './routes/TeamFolders';
+import Documentation from './routes/Documentation';
 import Schedule from './routes/Schedule';
 import OfficeHours from './routes/OfficeHours';
 
@@ -21,7 +21,7 @@ class App extends React.Component<any, any> {
           </div>
         </nav>
         <ul className="uk-switcher switcher-container page-content-wrapper">
-          <li className="page-content-wrapper"><TeamFolders /></li>
+          <li className="page-content-wrapper"><Documentation /></li>
           <li className="page-content-wrapper"><Schedule /></li>
           <li className="page-content-wrapper"><OfficeHours /></li>
         </ul>

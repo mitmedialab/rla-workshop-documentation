@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as $ from 'jquery';
 
-class TeamFolders extends React.Component<any, any> {
+class Documentation extends React.Component<any, any> {
   
   constructor(props){
     super(props);
@@ -42,6 +42,10 @@ class TeamFolders extends React.Component<any, any> {
               <td>Names, members, and descriptions of all workshop teams</td>
             </tr>
             <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://photos.app.goo.gl/2g2icneiD2ZRBMmD2">Photos</a></td>
+              <td>Add your photos from throughout the week!</td>
+            </tr>
+            <tr>
               <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
               <td>Slide decks and worksheets from throughout the week</td>
             </tr>
@@ -74,4 +78,4 @@ class TeamFolders extends React.Component<any, any> {
   }
 }
 
-export default TeamFolders;
+export default Documentation;
