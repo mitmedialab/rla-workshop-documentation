@@ -48,15 +48,10 @@ class PortfolioPage extends React.Component<any, any> {
   
   handleMarkdownChange(e) {
     this.setState({'markdown': e.target.value});
-    this.handleMarkdownSave();
-  }
-  
-  handleMarkdownSave() {
     $.post('/teammarkdown', {
-      'markdown': this.state.markdown,
+      'markdown': e.target.value,
       'name': this.state.name
     });
-    
   }
   
   getMarkdownSection() {
