@@ -36,9 +36,15 @@ class Portfolios extends React.Component<any, any> {
     });
   }
   
+  handleKeyPress(e) {
+    if(e.keyCode == 27) {
+      this.componentWillMount();
+    }
+  }
+  
   render() {
     return (
-      <div className="page-content uk-background-muted">
+      <div className="page-content uk-background-muted" onKeyDown={this.handleKeyPress.bind(this)}>
         <div className="portfolio-tile-container">
           {this.state.teamNames.map((name) => {
             return (<div 
@@ -58,9 +64,10 @@ class Portfolios extends React.Component<any, any> {
             
             <PortfolioPage name={this.state.currentName} />
             
-            <button className="uk-modal-close-full uk-close-small" type="button" uk-close="true"></button>
+            <button className="uk-modal-close-full uk-close-small" type="button" uk-close="true" onClick={this.componentWillMount.bind(this)}></button>
           </div>
         </div>
+        
       </div>
     );
   }
