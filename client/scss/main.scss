@@ -64,3 +64,70 @@ nav {
 .small-spacer {
   height: 10px;
 }
+
+.uk-modal-dialog {
+  height: 100%;
+}
+
+.portfolio-tile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.portfolio-tile {
+  border: solid 1px #F8F8F8;
+  cursor: pointer;
+  text-align: center;
+  @media screen and (max-width: 840px) {
+    width: 50%;
+    padding: 25px;
+  }
+  @media screen and (min-width: 841px) and (max-width: 1200px) {
+    width: 33.3%;
+    padding: 40px;
+  }
+  @media screen and (min-width: 1201px) {
+    width: 25%;
+    padding: 50px;
+  }
+}
+
+.portfolio-tile:hover {
+  transition: background-color 0.2s ease-out;
+  background-color: #2889ED;
+}
+
+.markdown-grid {
+  height: 100%;
+}
+
+.markdown-container {
+  overflow-wrap: break-word;
+}
+
+.markdown-textarea {
+  height: 100%;
+}
+
+.portfolio-header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.portfolio-header-left {
+  flex: 1;
+}
+
+.portfolio-header-right {
+  min-width: 300px;
+  flex: 0;
+}
+
+.horizontal-spacer {
+  margin-left: 10px;
+}
+
+.close-button-spacer {
+  margin-left: 54px;
+}

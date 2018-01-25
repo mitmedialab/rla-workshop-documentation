@@ -49,6 +49,10 @@ app.post("/teamfolder", (req, res) => {
   fs.writeFileSync(path.join(__dirname, 'folders.json'), JSON.stringify(jsonFile));
   res.send(true);
 });
+app.post("/teammarkdown", (req, res) => {
+  fs.writeFileSync(path.join(__dirname, '../../client/public/md/' + req.body.name.toLowerCase() + '.md'), req.body.markdown);
+  res.send(true);
+});
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/public/index.html'));
 });
