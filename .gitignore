@@ -2,3 +2,4 @@ node_modules
 server/build
 client/public/dist
 client/public/md
+client/public/desc
