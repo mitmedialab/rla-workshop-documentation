@@ -46,7 +46,7 @@ app.post("/teamfolder", (req, res) => {
   var jsonFile = JSON.parse(fs.readFileSync(path.join(__dirname, 'folders.json'), 'utf8'));
   var newFolder = [req.body.name, PREMADE_FOLDERS[jsonFile['folders'].length]];
   jsonFile['folders'].push(newFolder);
-  fs.writeFileSync(path.join(__dirname, 'folders.json'), JSON.stringify(jsonFile));
+  fs.writeFileSync(path.join(__dirname, 'folders.json'), JSON.stringify(jsonFile, null, 2));
   res.send(true);
 });
 app.post("/teammarkdown", (req, res) => {
