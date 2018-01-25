@@ -55,7 +55,7 @@ class Schedule extends React.Component<any, any> {
         ['9:00am', '', 'Buses leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
-        ['1:15pm', '2:00pm', 'Expert sessions with Vahid Alice, and Noor', 'VBC'],
+        ['1:15pm', '2:00pm', 'Expert sessions with Vahid, Alice, and Noor', 'VBC'],
         ['2:00pm', '6:00pm', 'Build + office hours', 'VBC'],
         ['6:00pm', '', 'Dinner', 'VBC'],
         ['', '', 'Buses back to hotel', '']
