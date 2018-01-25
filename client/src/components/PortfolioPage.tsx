@@ -27,20 +27,20 @@ class PortfolioPage extends React.Component<any, any> {
   updateState(name) {
     $.get('/teamfolders').then((folders) => {      
       $.get('/md/' + name.toLowerCase() + '.md').then((markdown) => {
-        if (markdown.startsWith('<!DOCTYPE html>')) markdown = '';
-        
-        var folderLink = folders.filter((folder) => {
-          return (folder[0].toLowerCase() == name.toLowerCase());
-        })[0][1];
-        
-        console.log(this.state.imageLinks);
-                
-        this.setState({
-          'name': name,
-          'markdown': markdown,
-          'folderLink': folderLink,
-          'imageLinks': [],
-          'editing': false
+        $.get('/imagelinks?name=' + name.toLowerCase()).then((imageLinks) => {
+          if (markdown.startsWith('<!DOCTYPE html>')) markdown = '';
+          
+          var folderLink = folders.filter((folder) => {
+            return (folder[0].toLowerCase() == name.toLowerCase());
+          })[0][1];
+                  
+          this.setState({
+            'name': name,
+            'markdown': markdown,
+            'folderLink': folderLink,
+            'imageLinks': imageLinks,
+            'editing': false
+          });
         });
       });
     });
@@ -54,17 +54,14 @@ class PortfolioPage extends React.Component<any, any> {
     });
   }
   
-  getMarkdownSection() {
-    if (this.state.editing) {    
-      return (
-        <div className="markdown-grid uk-child-width-expand@s" uk-grid="true">
+  getBottomSection() {
+    console.log(this.state.imageLinks);
+    if ((this.state.imageLinks.length > 0) || this.state.editing) {
+      return (<div className="markdown-grid uk-child-width-expand@s fill-height" uk-grid="true">
           <div><ReactMarkdown className="markdown-container" source={this.state.markdown} /></div>
-          <div><textarea 
-            className="uk-textarea markdown-textarea"
-            onChange={this.handleMarkdownChange.bind(this)}
-            value={this.state.markdown}></textarea></div>
+          <div className="fill-height">{this.getRightSection()}</div>
         </div>
-      )
+      );
     } else {
       return (
         <div><ReactMarkdown className="markdown-container" source={this.state.markdown} /></div>
@@ -72,26 +69,35 @@ class PortfolioPage extends React.Component<any, any> {
     }
   }
   
-  getPhotosSection() {
-    return (<div></div>);
-    // return (
-    //   <div>
-    //     <hr className="uk-divider-icon" />
-    // 
-    //     <div className="uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; ratio: 7:3; autoplay-interval: 3000">
-    //       <ul className="uk-slideshow-items">
-    //         {this.state.imageLinks.map((link) => {
-    //           console.log(link);
-    //           return (
-    //             <li key={link}>
-    //               <img src={link} alt="" uk-cover="true" />
-    //             </li>
-    //           )
-    //         })}
-    //       </ul>
-    //     </div>
-    //   </div>
-    // );
+  getRightSection() {
+    console.log(this.state.editing);
+    if (this.state.editing) {
+      return (
+        <div className="fill-height">
+          <textarea 
+          className="uk-textarea fill-height"
+          onChange={this.handleMarkdownChange.bind(this)}
+          value={this.state.markdown}></textarea>
+        </div>
+      );
+    } else {
+      return (
+        <div className="fill-height">      
+          <div className="fill-neight uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; autoplay-interval: 3000;">
+            <ul className="uk-slideshow-items">
+              {this.state.imageLinks.map((link) => {
+                console.log(link);
+                return (
+                  <li key={link}>
+                    <img src={link} alt="" uk-cover="true" />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      )
+    }
   }
   
   toggleEditing() {
@@ -100,7 +106,7 @@ class PortfolioPage extends React.Component<any, any> {
   
   render() {
     return (
-      <div>
+      <div className="fill-height">
         
         <div className="portfolio-header-container">
           <div className="portfolio-header-left">
@@ -120,9 +126,8 @@ class PortfolioPage extends React.Component<any, any> {
           </div>
         </div>
         
-        {this.getMarkdownSection()}
+        {this.getBottomSection()}
         
-        {this.getPhotosSection()}
       </div>
     );
   }

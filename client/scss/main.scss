@@ -106,10 +106,6 @@ nav {
   overflow-wrap: break-word;
 }
 
-.markdown-textarea {
-  height: 100%;
-}
-
 .portfolio-header-container {
   display: flex;
   flex-direction: row;
@@ -130,4 +126,8 @@ nav {
 
 .close-button-spacer {
   margin-left: 54px;
+}
+
+.fill-height {
+  min-height: calc(100vh - 130px);
 }

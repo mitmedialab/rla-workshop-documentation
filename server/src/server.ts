@@ -6,7 +6,7 @@ import * as winston from "winston";
 import * as logger from "morgan";
 import * as express from "express";
 
-var PREMADE_FOLDERS = [
+const PREMADE_FOLDERS = [
   "https://drive.google.com/drive/u/0/folders/1H6OLX2n3pvuBk5cRWIxS5h4BkRC8alLq",
   "https://drive.google.com/drive/u/0/folders/16VOjlUJ9Bf2QtvISgI_VZKLin9-io2nU",
   "https://drive.google.com/drive/u/0/folders/1ktI7bbpNhLg9XODfkvIAwOgw3LhVLKka",
@@ -53,6 +53,20 @@ app.post("/teammarkdown", (req, res) => {
   fs.writeFileSync(path.join(__dirname, '../../client/public/md/' + req.body.name.toLowerCase() + '.md'), req.body.markdown);
   res.send(true);
 });
+app.get('/imagelinks', (req, res) => {
+  var clean = function (text) {
+    return text.toLowerCase().replace(/-/g, '').replace(/ /g, '');
+  }
+  
+  fs.readdir(path.join(__dirname, '../../client/public/img/'), (err, files) => {
+    res.send(files.filter((file) => {
+      return clean(file).startsWith(clean(req.query.name));
+    }).map((file) => {
+      return '/img/' + file;
+    }));
+  });
+});
+
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, '../../client/public/index.html'));
 });
