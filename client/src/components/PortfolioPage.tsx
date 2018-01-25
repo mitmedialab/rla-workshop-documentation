@@ -107,7 +107,7 @@ class PortfolioPage extends React.Component<any, any> {
             <h1>{this.state.name}</h1>
           </div>
           <div>
-            <a className="uk-button uk-button-primary uk-button-small" href={this.state.folderLink}>Team Folder</a>
+            <a className="uk-button uk-button-secondary uk-button-small" href={this.state.folderLink}>Team Folder</a>
           </div>
           <div>
             <span className="horizontal-spacer"></span>
