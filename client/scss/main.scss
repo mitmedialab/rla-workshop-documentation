@@ -131,3 +131,11 @@ nav {
 .fill-height {
   min-height: calc(100vh - 130px);
 }
+
+.fill-height-smaller {
+  min-height: calc(100vh - 130px - 74px);
+}
+
+.maintain-height {
+  height: 34px;
+}

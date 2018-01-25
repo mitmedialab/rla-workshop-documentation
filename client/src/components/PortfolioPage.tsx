@@ -27,19 +27,23 @@ class PortfolioPage extends React.Component<any, any> {
   updateState(name) {
     $.get('/teamfolders').then((folders) => {      
       $.get('/md/' + name.toLowerCase() + '.md').then((markdown) => {
-        $.get('/imagelinks?name=' + name.toLowerCase()).then((imageLinks) => {
-          if (markdown.startsWith('<!DOCTYPE html>')) markdown = '';
-          
-          var folderLink = folders.filter((folder) => {
-            return (folder[0].toLowerCase() == name.toLowerCase());
-          })[0][1];
-                  
-          this.setState({
-            'name': name,
-            'markdown': markdown,
-            'folderLink': folderLink,
-            'imageLinks': imageLinks,
-            'editing': false
+        $.get('/desc/' + name.toLowerCase() + '.txt').then((description) => {
+          $.get('/imagelinks?name=' + name.toLowerCase()).then((imageLinks) => {
+            if (markdown.startsWith('<!DOCTYPE html>')) markdown = '';
+            if (description.startsWith('<!DOCTYPE html>')) description = '';
+            
+            var folderLink = folders.filter((folder) => {
+              return (folder[0].toLowerCase() == name.toLowerCase());
+            })[0][1];
+                    
+            this.setState({
+              'name': name,
+              'description': description,
+              'markdown': markdown,
+              'folderLink': folderLink,
+              'imageLinks': imageLinks,
+              'editing': false
+            });
           });
         });
       });
@@ -54,28 +58,52 @@ class PortfolioPage extends React.Component<any, any> {
     });
   }
   
+  handleDescriptionChange(e) {
+    this.setState({'description': e.target.value});
+    $.post('/teamdescription', {
+      'description': e.target.value,
+      'name': this.state.name
+    });
+  }
+  
   getBottomSection() {
-    console.log(this.state.imageLinks);
     if ((this.state.imageLinks.length > 0) || this.state.editing) {
       return (<div className="markdown-grid uk-child-width-expand@s fill-height" uk-grid="true">
-          <div><ReactMarkdown className="markdown-container" source={this.state.markdown} /></div>
+          {this.getContentSection()}
           <div className="fill-height">{this.getRightSection()}</div>
         </div>
       );
     } else {
       return (
-        <div><ReactMarkdown className="markdown-container" source={this.state.markdown} /></div>
-      )
+        <div>
+          {this.getContentSection()}
+        </div>
+      );
     }
   }
   
+  getContentSection() {
+    return (
+      <div>
+        <div className="maintain-height">{this.state.description}</div>
+        <hr className="uk-divider-small" />
+        <ReactMarkdown className="markdown-container" source={this.state.markdown} />
+      </div>
+    );
+  }
+  
   getRightSection() {
-    console.log(this.state.editing);
     if (this.state.editing) {
       return (
         <div className="fill-height">
           <textarea 
-          className="uk-textarea fill-height"
+          className="uk-textarea"
+          rows={1} 
+          onChange={this.handleDescriptionChange.bind(this)}
+          value={this.state.description}></textarea>
+          <hr className="uk-divider-small" />
+          <textarea 
+          className="uk-textarea fill-height-smaller"
           onChange={this.handleMarkdownChange.bind(this)}
           value={this.state.markdown}></textarea>
         </div>
@@ -83,10 +111,9 @@ class PortfolioPage extends React.Component<any, any> {
     } else {
       return (
         <div className="fill-height">      
-          <div className="fill-neight uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; autoplay-interval: 3000;">
+          <div className="fill-neight uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; autoplay-interval: 3000; ratio: 4:3">
             <ul className="uk-slideshow-items">
               {this.state.imageLinks.map((link) => {
-                console.log(link);
                 return (
                   <li key={link}>
                     <img src={link} alt="" uk-cover="true" />

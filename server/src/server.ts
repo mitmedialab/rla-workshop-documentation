@@ -53,6 +53,10 @@ app.post("/teammarkdown", (req, res) => {
   fs.writeFileSync(path.join(__dirname, '../../client/public/md/' + req.body.name.toLowerCase() + '.md'), req.body.markdown);
   res.send(true);
 });
+app.post("/teamdescription", (req, res) => {
+  fs.writeFileSync(path.join(__dirname, '../../client/public/desc/' + req.body.name.toLowerCase() + '.txt'), req.body.description);
+  res.send(true);
+});
 app.get('/imagelinks', (req, res) => {
   var clean = function (text) {
     return text.toLowerCase().replace(/-/g, '').replace(/ /g, '');
