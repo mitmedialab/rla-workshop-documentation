@@ -11,16 +11,28 @@ class Portfolios extends React.Component<any, any> {
     this.state = { 
       'teamNames': [],
       'teamFolderLinks': {},
-      'currentName': ''
+      'currentName': '',
+      'teamDescriptions': {}
     };
   }
   
   
   componentWillMount() {
     $.get('/teamfolders').then((folders) => {
-      this.setState({
-        'teamNames': folders.map((folder) => { return folder[0]; })
-      });
+      var teamNames = folders.map((folder) => { return folder[0]; });
+      var teamDescriptions = {};
+      teamNames.forEach((name) => {
+        $.get('/desc/' + name.toLowerCase() + '.txt').then((description) => {
+          if (description.startsWith('<!DOCTYPE html>')) description = '';
+          teamDescriptions[name] = description;
+          if (Object.keys(teamDescriptions).length == teamNames.length) {
+            this.setState({
+              'teamDescriptions': teamDescriptions,
+              'teamNames': teamNames
+            })
+          }
+        })
+      })
     });
   }
   
@@ -33,7 +45,11 @@ class Portfolios extends React.Component<any, any> {
               key={name} 
               className="portfolio-tile uk-tile uk-tile-secondary" 
               uk-toggle="target: #portfolio-modal"
-              onClick={() => { this.setState({'currentName': name})}}>{name}</div>)
+              onClick={() => { this.setState({'currentName': name})}}>
+                <h3>{name}</h3>
+                <p>{this.state.teamDescriptions[name]}</p>
+              </div>
+            );
           })}
         </div>
         
