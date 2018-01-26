@@ -35,23 +35,23 @@ class Documentation extends React.Component<any, any> {
     return (
       <div className="uk-padding uk-section uk-section-secondary page-content">        
         <h3 className="uk-heading-divider">General Documents</h3>
-        <table className="uk-table uk-table-small uk-table-middle">
+        <table className="uk-table uk-table-small uk-table-responsive uk-table-middle">
           <tbody>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://docs.google.com/document/d/1fpsN_GjN3AvPcR5qCf06SAV7nBPgri8ivdW7WiVSiaQ/edit?usp=sharing">Teams</a></td>
               <td>Names, members, and descriptions of all workshop teams</td>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://docs.google.com/document/d/1fpsN_GjN3AvPcR5qCf06SAV7nBPgri8ivdW7WiVSiaQ/edit?usp=sharing">Teams</a></td>
             </tr>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1m5PJBaLYNOXBypAeL2zh12tq4QHix2Sh?usp=sharing">Presentations</a></td>
               <td>Slides from all teams' pitch presentations on Friday</td>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1m5PJBaLYNOXBypAeL2zh12tq4QHix2Sh?usp=sharing">Presentations</a></td>
             </tr>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
               <td>Slide decks and worksheets from throughout the week</td>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
             </tr>
             <tr>
-              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1bMuOHSuXzpQQ0ZqPuP07GCTaGuRlmMSq?usp=sharing">NGO Field Visits</a></td>
               <td>Notes from from field interviews and NGO discussions</td>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1bMuOHSuXzpQQ0ZqPuP07GCTaGuRlmMSq?usp=sharing">NGO Field Visits</a></td>
             </tr>
           </tbody>
         </table>
@@ -78,7 +78,7 @@ class Documentation extends React.Component<any, any> {
         <div>Create a new folder if your team doesn't have a folder yet:</div>
         <div className="small-spacer"></div>
         <div>
-          <input className="uk-input uk-form-width-large" type="text" placeholder="Enter team name..." onChange={this.handleChange.bind(this)} value={this.state.folderName}/> <button className="uk-button uk-button-primary" onClick={this.handleClick.bind(this)}>Create Team Folder</button>
+          <input className="team-name-input uk-input uk-form-width-large" type="text" placeholder="Enter team name..." onChange={this.handleChange.bind(this)} value={this.state.folderName}/> <button className="team-name-input uk-button uk-button-primary" onClick={this.handleClick.bind(this)}>Create Team Folder</button>
         </div>
       </div>
     );
