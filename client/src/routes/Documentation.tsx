@@ -42,6 +42,10 @@ class Documentation extends React.Component<any, any> {
               <td>Names, members, and descriptions of all workshop teams</td>
             </tr>
             <tr>
+              <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/drive/folders/1m5PJBaLYNOXBypAeL2zh12tq4QHix2Sh?usp=sharing">Pitch Presentations</a></td>
+              <td>Slides from all teams' pitches on Friday</td>
+            </tr>
+            <tr>
               <td className="limit-width"><a className="uk-button uk-button-primary document-button" href="https://drive.google.com/open?id=1CFoO69vGhimnAozX2Gdl4WaIDNpVpH4H">Sessions</a></td>
               <td>Slide decks and worksheets from throughout the week</td>
             </tr>
