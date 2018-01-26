@@ -22,52 +22,55 @@ class Schedule extends React.Component<any, any> {
       ],
       'Monday': [
         ['', '', 'Breakfast', 'Crown Plaza hotel'],
-        ['9:00am', '', 'Buses leave hotel', ''],
+        ['9:00am', '', 'Leave hotel', ''],
         ['9:30am', '12:30pm', '"Speed dating" with NGOs', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
         ['1:15pm', '2:45pm', 'Synthesis and prototyping', 'VBC'],
         ['2:45pm', '3:00pm', 'Introduction to office hours', 'VBC'],
         ['3:00pm', '6:00pm', 'Build + office hours', 'VBC'],
-        ['6:00pm', '', 'Dinner', 'VBC'],
-        ['', '', 'Buses back to hotel', '']
+        ['6:00pm', '', 'Dinner', ''],
+        ['', '', 'Back to hotel', '']
       ],
       'Tuesday': [
         ['', '', 'Breakfast', 'Crown Plaza hotel'],
-        ['9:00am', '', 'Buses leave hotel', ''],
+        ['9:00am', '', 'Leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:00pm', '1:00pm', 'Lunch', 'VBC'],
         ['1:00pm', '4:00pm', 'Pitch workshop with IRC', 'VBC'],
         ['4:00pm', '7:00pm', 'Reception', 'VBC'],
-        ['', '', 'Buses back to hotel', '']
+        ['', '', 'Back to hotel', '']
       ],
       'Wednesday': [
         ['', '', 'Breakfast', 'Crown Plaza hotel'],
-        ['9:00am', '', 'Buses leave hotel', ''],
+        ['9:00am', '', 'Leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
         ['1:15pm', '2:00pm', 'Looking forward to Phase 3', 'VBC'],
         ['2:00pm', '6:00pm', 'Build + office hours', 'VBC'],
-        ['6:00pm', '', 'Dinner', 'VBC'],
-        ['', '', 'Buses back to hotel', '']
+        ['6:00pm', '', 'Dinner', ''],
+        ['', '', 'Back to hotel', '']
       ],
       'Thursday': [
         ['', '', 'Breakfast', 'Crown Plaza hotel'],
-        ['9:00am', '', 'Buses leave hotel', ''],
+        ['9:00am', '', 'Leave hotel', ''],
         ['9:30am', '12:00pm', 'Build', 'VBC'],
         ['12:30pm', '1:15pm', 'Lunch', 'VBC'],
         ['1:15pm', '2:00pm', 'Expert sessions with Vahid, Alice, and Noor', 'VBC'],
         ['2:00pm', '6:00pm', 'Build + office hours', 'VBC'],
-        ['6:00pm', '', 'Dinner', 'VBC'],
-        ['', '', 'Buses back to hotel', '']
+        ['6:00pm', '', 'Dinner', ''],
+        ['', '', 'Back to hotel', '']
       ],
       'Friday': [
         ['', '', 'Breakfast', 'Crown Plaza hotel'],
-        ['9:00am', '', 'Buses leave hotel', ''],
-        ['9:30am', '12:00pm', 'Build', 'VBC'],
-        ['12:30pm', '1:30pm', 'Lunch', 'VBC'],
-        ['1:30pm', '4:00pm', 'Pitches + Closing ceremony', 'VBC'],
-        ['4:00pm', '6:00pm', 'Reception', 'VBC'],
-        ['', '', 'Buses back to hotel', '']
+        ['10:00am', '', 'Leave hotel', ''],
+        ['10:30am', '12:00pm', 'Work', 'VBC'],
+        ['12:15pm', '1:00pm', 'Lunch', 'VBC'],
+        ['1:00pm', '1:30pm', 'Reflect', 'VBC'],
+        ['1:30pm', '2:00pm', 'Prep', 'VBC'],
+        ['2:00pm', '4:00pm', 'Pitches + Closing ceremony', 'VBC'],
+        ['4:00pm', '6:00pm', 'Reception and Celebration', 'VBC'],
+        ['6:00pm', '', 'Dinner', ''],
+        ['', '', 'Back to hotel', '']
       ],
     };
     return (
