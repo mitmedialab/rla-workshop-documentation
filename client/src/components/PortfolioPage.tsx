@@ -111,7 +111,7 @@ class PortfolioPage extends React.Component<any, any> {
     } else {
       return (
         <div className="fill-height">      
-          <div className="fill-neight uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; autoplay-interval: 3000; ratio: 4:3">
+          <div className="fill-neight uk-position-relative uk-visible-toggle" uk-slideshow="animation: push; autoplay:true; autoplay-interval: 10000; ratio: 4:3">
             <ul className="uk-slideshow-items">
               {this.state.imageLinks.map((link) => {
                 return (

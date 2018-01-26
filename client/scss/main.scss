@@ -79,6 +79,9 @@ nav {
   border: solid 1px #F8F8F8;
   cursor: pointer;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 10px;
@@ -92,6 +95,7 @@ nav {
     padding: 15px;
   }
   @media screen and (min-width: 1201px) {
+    min-height: calc(1/4 * (100vh - 82px));
     width: 25%;
     padding: 15px;
   }
