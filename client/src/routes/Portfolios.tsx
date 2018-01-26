@@ -28,7 +28,8 @@ class Portfolios extends React.Component<any, any> {
           if (Object.keys(teamDescriptions).length == teamNames.length) {
             this.setState({
               'teamDescriptions': teamDescriptions,
-              'teamNames': teamNames
+              'teamNames': teamNames,
+              'currentName': ''
             })
           }
         })

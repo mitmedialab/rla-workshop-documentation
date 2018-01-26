@@ -46,7 +46,13 @@ nav {
 
 .photos-button {
   margin-right: 5px;
-  width: calc(100% * (1/3) - 10px);
+  margin-bottom: 5px;
+  @media screen and (max-width: 900px) {
+    width: calc(100% * (1/1) - 10px);
+  }
+  @media screen and (min-width: 901px) {
+    width: calc(100% * (1/3) - 10px);
+  }
 }
 
 .folder-button-container {
@@ -56,9 +62,23 @@ nav {
 }
 
 .folder-button {
-  width: calc(100% * (1/4) - 10px);
+  @media screen and (max-width: 600px) {
+    width: calc(100% * (1/1) - 10px);
+  }
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    width: calc(100% * (1/2) - 10px);
+  }
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    width: calc(100% * (1/3) - 10px);
+  }
+  @media screen and (min-width: 1201px) {
+    width: calc(100% * (1/4) - 10px);
+  }
   margin-right: 10px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .small-spacer {
