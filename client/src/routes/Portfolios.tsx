@@ -37,14 +37,14 @@ class Portfolios extends React.Component<any, any> {
   }
   
   handleKeyPress(e) {
-    if(e.keyCode == 27) {
-      this.componentWillMount();
-    }
+    
   }
   
   render() {
     return (
-      <div className="page-content uk-background-muted" onKeyDown={this.handleKeyPress.bind(this)}>
+      <div 
+        className="page-content uk-background-muted" 
+        onKeyDown={(e) => { if(e.keyCode == 27) this.componentWillMount() }}>
         <div className="portfolio-tile-container">
           {this.state.teamNames.map((name) => {
             return (<div 

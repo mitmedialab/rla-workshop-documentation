@@ -40,7 +40,11 @@ app.engine('html', function (path, options, callback) {
 });
 app.get("/teamfolders", (req, res) => {
   var jsonFile = JSON.parse(fs.readFileSync(path.join(__dirname, 'folders.json'), 'utf8'));
-  res.send(jsonFile['folders']);
+  res.send(jsonFile['folders'].sort((a, b) => { 
+    if (a[0].toLowerCase() < b[0].toLowerCase()) return -1;
+    if (a[0].toLowerCase() > b[0].toLowerCase()) return 1;
+    return 0;
+  }));
 });
 app.post("/teamfolder", (req, res) => {
   var jsonFile = JSON.parse(fs.readFileSync(path.join(__dirname, 'folders.json'), 'utf8'));
