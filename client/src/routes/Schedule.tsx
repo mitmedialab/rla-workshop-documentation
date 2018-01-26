@@ -5,7 +5,7 @@ import ScheduleTable from '../components/ScheduleTable';
 class Schedule extends React.Component<any, any> {
   render() {
     // Today changed at the start of each day
-    var today = 'Thursday';
+    var today = 'Friday';
     var days = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
     // Events to be filled with latest
     var events = {
